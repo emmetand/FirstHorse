@@ -75,7 +75,7 @@ def horse_make(quote):
     video = VideoFileClip(video_path)
     video = video.subclipped(0,7)
 
-    # loads audio file and adusts it
+    # loads audio file and adjusts it
     audio = AudioFileClip(audio_path)
 
     # add text overlay
