@@ -25,7 +25,6 @@ def main():
     # combines and saves the horse video and horse audio
     horse_make(quote)
 
-
 def get_gift_horse_quote(filename):
     # returns random quote from CSV file of quotes
     df = pd.read_csv(filename, quotechar='"')
@@ -57,14 +56,13 @@ def horse_vid_download():
 
     #save it
     video_files = sorted(chosen["video_files"], key=lambda f: f["width"] * f["height"])
-    video_url = chosen["video_files"][0]["link"]
+    video_url = video_files[0]["link"]
     save = os.path.join("assets", "horse_background.mp4")
 
     r = requests.get(video_url)
     with open(save, "wb") as f:
         f.write(r.content)
         print(f"Saved video file to: {save}")
-
 
 def horse_make(quote):
     video_path = "assets/horse_background.mp4"
